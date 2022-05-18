@@ -5,10 +5,8 @@
   </head>
   <body>
     <header>
-      <h1><a href="{% url 'product_list'%}">Inventory Manager</a></h1>
-      <p>+ <a href="{% url 'product_create' %}">Add a Product</a></p>
-      <p>+ <a href="{% url 'location_list' %}">Manage Locations</a></p>
-    </header>
+      <h1><a href="{% url 'home'%}">Inventory Manager</a></h1>
+      
     <div>
       {% block content %}
       {% endblock content %}

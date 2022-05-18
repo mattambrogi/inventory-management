@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
-from .models import Location, Product
+from .models import Product, Location, Stock
 
-admin.site.register(Location)
 admin.site.register(Product)
+admin.site.register(Location)
+admin.site.register(Stock)
+

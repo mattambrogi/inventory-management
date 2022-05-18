@@ -1,22 +1,47 @@
-# Python on Replit
+# Inventory Management Application
 
-This is a template to get you started with Python on Replit. It's ready to go so you can just hit run and start coding!
+This web application is designed to help manage inventory for any type of store. 
 
-## Running the repl
+To test use the app, simply visit https://inventory-management.mattambrogi.repl.co/. 
 
-Simply hit run! You can edit the run command from the `.replit` file.
+## User guide
+The home page of the application contains a user guide. 
 
-## Installing packages
+In short:
+- Users can create products for their store to carry
+- Users can create locations, which may represent warehouses or stores depending on the use case
+- Users can then assign stock (a given quantity of any product) to locations
 
-To add packages to your repl, you can just import directly in the file you want to use the package in, and it will automatically be installed when you press the run button. Like below:
-```python
-import math
-import pandas as pd
-from flask import Flask
-```
+Users can view and manage inventory by
+- Viewing all products
+- Viewing all locations
+- Viewing all stock across locations
+- Viewing all products at a given location
+- Viewing all locations where a given product is in stock
 
-You could also install packages by using the Replit packager interface in the left sidebar.
+Within each of these views, users have the ability to create, update, and delete stock.
 
-## Help
+## Technical implementation
 
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Feel free to report bugs and give us feedback [here](https://replit.com/support).
+This project was built as a monolithic Django app, which lends itself particulary well to CRUD based applications.
+
+URLs and Views map to the user screens mentioned above.
+
+The database consistens of 3 models
+
+**Product**: brand, item_name, price
+
+**Location**: name, zip_code
+
+**Stock**: product, location, quantity
+
+
+## Further work
+
+There are many features which could be added to this project given more time. To list a few:
+
+- Add form validation to ensure consistency of all input data
+- Add unique identifiers for products and locations instead of depending on primary keys
+- Allow users to increment stock directly directly from lists instead of having to click into a separate page
+- Build out more tests for reliability
+

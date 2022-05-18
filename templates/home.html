@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Management Dashboard</h2>
+  <h3>Manage Stock</h3>
+  <ul>
+    <li><a href="{% url 'stock_list'%}">View and manage stock at all locations</a></li>
+    <li><a href="{% url 'stock_create' %}">Add new stock item</a></li>
+  </ul>
+  <h3>Manage Products</h3>
+  <ul>
+    <li><a href="{% url 'product_list'%}">View all, update, delete</a></li>
+    <li><a href="{% url 'product_create' %}">Add new product</a></li>  
+  </ul>
+  <h3>Manage Locations</h3>
+  <ul>
+    <li><a href="{% url 'location_list'%}">View all, update, delete, and see stock by location</a></li>
+    <li><a href="{% url 'location_create' %}">Add new location</a></li>  
+  </ul>
+
+  <hr style="margin-top:50px;">
+  <h2>User Guide</h2>
+  <p>
+    This web app allows users to manage an inventory of products across multiple locations.
+  </p>
+  <p>
+    Users can add data in the form of products, locations, and stock.
+  </p>
+  <p>
+    Products have a brand, item name, and unit price. 
+  </p>
+  <p>
+    Locations have a name and zip code. 
+  </p>
+  <p>
+    Stock refers to the quantity of a given product at a location. Users can create stock which is assigned to a location.
+  </p>
+  <p>
+    Here's an example workflow to test. Image you are a skateboard retailer:
+  </p>
+  <ol>
+    <li>Create a new location in your home town</li>
+    <li>Create a new product the shop would carry</li>
+    <li>Click 'add a new stock item' to declare that your shop is carrying some quantity of that product.</li>
+  </ol>
+
+<p>Users can view the inventory in a variety of ways:</p>
+<ul>
+  <li>View all products</li>
+  <li>View all locations</li>
+  <li>View all stock across locations</li>
+  <li>View all products at a given location</li>
+  <li>View all locations where a given product is in stock</li>
+</ul>
+
+<p>Within each of these views, users have the ability to create, update, and delete stock.</p>
+  
+{% endblock content %}

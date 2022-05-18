@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <a href="{% url 'product_create'%}">+ Add Product</a>
+  <table style="width:50%">
+    <tr>
+    <th>Brand</th>
+    <th>Product</th>
+    <th>Price</th>
+  </tr>
+  {% for product in product_list %}
+    <tr class="product-entry">
+      <td>{{ product.brand }}</td>
+      <td>{{ product.item_name }}</td>
+      <td>{{ product.price }}</td>
+      <td><a href="{% url 'product_edit' product.pk%}">Edit</a></td>
+      <td><a href="{% url 'product_delete' product.pk%}">Delete</a></td>
+      <td><a href="{% url 'stock_product_list' product.pk%}">View Stock / Locations</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock content %}
+

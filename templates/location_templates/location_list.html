@@ -6,13 +6,16 @@
     <tr>
     <th>ID</th>
     <th>Location Name</th>
+    <th>Zip Code</th>
   </tr>
   {% for location in location_list %}
     <tr class="location-entry">
-      <td><a href="">{{ location.pk }}</a></td>
+      <td>{{ location.pk }}</td>
       <td>{{ location.name }}</td>
-      <td><a href="{% url 'location_edit' location.pk %}">Update</a>
-      <td><a href="{% url 'location_delete' location.pk %}">Delete</a></td>
+      <td>{{ location.zip_code }}</td>
+      <td><a href="{% url 'location_edit' location.pk%}">Update</a>
+      <td><a href="{% url 'location_delete' location.pk%}">Delete</a></td>
+      <td><a href="{% url 'stock_location_list' location.zip_code%}">View Stock</a></td>
     </tr>
   {% endfor %}
   </table>

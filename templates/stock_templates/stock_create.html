@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add Stock</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <input type="submit" value="Save">
+  </form>
+
+  <p>Product or location missing?</p>
+  <ul>
+    <li><a href="{% url 'product_create' %}">Add new product</a></li>
+    <li><a href="{% url 'location_create' %}">Add new location</a></li>
+  </ul>
+{% endblock content %}
