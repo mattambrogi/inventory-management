@@ -1,0 +1,13 @@
+<!-- templates/post_detail.html -->
+{% extends "base.html" %}
+{% block content %}
+  <div>
+    <h2>{{ product.item_name}}</h2>
+    <p>{{ product.location }}</p>
+    <p>{{ product.total_quantity }}</p>
+  </div>
+  <div>
+    <a href="{% url 'product_edit' product.pk %}">Update Product Inventory</a>
+    <a href="{% url 'product_delete' product.pk %}">Delete Product</a>
+  </div>
+{% endblock content %}

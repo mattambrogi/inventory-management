@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>New Product</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <input type="submit" value="Save">
+  </form>
+  <p>To add, remove, or update locations</p>
+  <a href="{% url 'location_list' %}">Location Manager</a>
+{% endblock content %}
