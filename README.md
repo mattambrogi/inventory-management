@@ -4,6 +4,8 @@ This web application is designed to help manage inventory for any type of store.
 
 To test use the app, simply visit https://inventory-management.mattambrogi.repl.co/. 
 
+If you are viewing this from the replit editor, simply hit 'run' to start the application. 
+
 To visit the replit code, visit https://replit.com/@mattambrogi/inventory-management
 
 ## User guide
